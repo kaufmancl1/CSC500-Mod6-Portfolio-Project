@@ -8,7 +8,7 @@ class ItemToPurchase:
 
     def print_item_cost(self):
         total = self.item_price * self.item_quantity
-        print(f"{self.item_name} {self.item_quantity} @ ${int(self.item_price)} = ${int(total)}")
+        print(f"{self.item_name} {self.item_quantity} @ ${self.item_price:.2f} = ${total:.2f}")
 
     def print_item_description(self):
         print(f"{self.item_name}: {self.item_description}")
@@ -72,7 +72,7 @@ class ShoppingCart:
             for item in self.cart_items:
                 item.print_item_cost()
 
-        print(f"\nTotal: ${int(self.get_cost_of_cart())}")
+        print(f"\nTotal: ${self.get_cost_of_cart():.2f}")
 
     def print_descriptions(self):
         print(f"{self.customer_name}'s Shopping Cart - {self.current_date}")
